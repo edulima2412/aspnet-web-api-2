@@ -70,4 +70,3 @@ D:\projeto web-api\WebApp\WebApp\obj\Debug\WebApp.pdb
 D:\projeto web-api\WebApp\WebApp\bin\System.Web.Cors.dll
 D:\projeto web-api\WebApp\WebApp\bin\System.Web.Http.Cors.dll
 D:\projeto web-api\WebApp\WebApp\bin\System.Web.Http.Cors.xml
-D:\projeto web-api\WebApp\WebApp\obj\Debug\WebApp.csprojAssemblyReference.cache

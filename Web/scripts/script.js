@@ -37,22 +37,37 @@ function NovoAluno() {
 function CarregarAlunos() {
     tbody.innerHTML = '';
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', `https://localhost:44333/api/Aluno`, true);
-    xhr.onload = function () {
-        var alunos = JSON.parse(this.responseText);
-        for (var indice in alunos) {
-            AdicionarLinha(alunos[indice]);
+    xhr.open('GET', `https://localhost:44333/api/alunos/Recuperar`, true);
+
+    xhr.onerror = function name(params) {
+        console.log('Erro', xhr.readyState);
+    }
+
+    xhr.onreadystatechange = function () {
+        if(this.readyState == 4) {
+            if (this.status == 200){
+                var alunos = JSON.parse(this.responseText);
+                for (var indice in alunos) {
+                    AdicionarLinha(alunos[indice]);
+                }
+            } else if(this.status == 500) {
+                var erro = JSON.parse(this.responseText);
+                console.log(erro);
+            }
         }
-    };
+    }
     xhr.send();
 }
 
 function SalvarAluno(metodo, id, corpo) {
     var xhr = new XMLHttpRequest();
-    if (aluno.id === undefined || aluno.id === 0) {
-        id = '';
+
+    if(metodo == 'PUT'){
+        xhr.open(metodo, `https://localhost:44333/api/alunos/Atualizar/${id}`, false);
+    } else {
+        xhr.open(metodo, `https://localhost:44333/api/alunos/Adicionar`, false);
     }
-    xhr.open(metodo, `https://localhost:44333/api/Aluno/${id}`, false);
+    
     xhr.setRequestHeader('content-type', 'application/json');
     xhr.send(JSON.stringify(corpo));
 }
@@ -92,7 +107,7 @@ function EditarAluno(estudante) {
 function DeletarAluno(id) {
     var xhr = new XMLHttpRequest();
 
-    xhr.open('DELETE', `https://localhost:44333/api/Aluno/${id}`, false);
+    xhr.open('DELETE', `https://localhost:44333/api/alunos/Deletar/${id}`, false);
     xhr.send();
 }
 

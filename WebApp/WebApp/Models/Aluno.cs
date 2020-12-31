@@ -7,25 +7,25 @@ using System.Web.Hosting;
 
 namespace WebApp.Models
 {
-    public class Alunos
+    public class Aluno
     {
         public int id { get; set; }
         public string nome { get; set; }
         public string sobrenome { get; set; }
         public string telefone { get; set; }
         public string registro { get; set; }
-        public string dataCadastro { get; set; }
+        public string data { get; set; }
 
-        public List<Alunos> ListarAlunos()
+        public List<Aluno> ListarAlunos()
         {
             var caminhoArquivo = HostingEnvironment.MapPath(@"~/App_Data/db.json");
             var json = File.ReadAllText(caminhoArquivo);
-            var alunos = JsonConvert.DeserializeObject<List<Alunos>>(json);
+            var alunos = JsonConvert.DeserializeObject<List<Aluno>>(json);
 
             return alunos;
         }
 
-        public bool ReescreverArquivo(List<Alunos> alunos)
+        public bool ReescreverArquivo(List<Aluno> alunos)
         {
             var caminhoArquivo = HostingEnvironment.MapPath(@"~/App_Data/db.json");
 
@@ -36,7 +36,7 @@ namespace WebApp.Models
             return true;
         }
 
-        public List<Alunos> Salvar(Alunos aluno)
+        public List<Aluno> Salvar(Aluno aluno)
         {
             var listaAlunos = this.ListarAlunos();
 
@@ -46,7 +46,7 @@ namespace WebApp.Models
             aluno.id = maxId + 1;
 
             var dataAtual = DateTime.Now.ToString("yyyy-MM-dd");
-            aluno.dataCadastro = dataAtual;
+            aluno.data = dataAtual;
 
             listaAlunos.Add(aluno);
 
@@ -55,7 +55,7 @@ namespace WebApp.Models
             return listaAlunos;
         }
 
-        public Alunos Atualizar(int id, Alunos aluno)
+        public Aluno Atualizar(int id, Aluno aluno)
         {
             var listaAlunos = this.ListarAlunos();
 
@@ -64,7 +64,7 @@ namespace WebApp.Models
             if(itemIndex > 0)
             {
                 aluno.id = id;
-                aluno.dataCadastro = listaAlunos[itemIndex].dataCadastro;
+                aluno.data = listaAlunos[itemIndex].data;
                 listaAlunos[itemIndex] = aluno;
             } else
             {

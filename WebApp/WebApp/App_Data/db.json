@@ -5,7 +5,7 @@
     "sobrenome": "Pereira",
     "telefone": "2548748",
     "registro": "001",
-    "dataCadastro": "2020-12-01"
+    "data": "2020-12-01"
   },
   {
     "id": 2,
@@ -13,7 +13,7 @@
     "sobrenome": "Silva",
     "telefone": "1542145",
     "registro": "002",
-    "dataCadastro": "2020-12-15"
+    "data": "2020-12-15"
   },
   {
     "id": 3,
@@ -21,6 +21,22 @@
     "sobrenome": "Silva",
     "telefone": "5457878",
     "registro": "003",
-    "dataCadastro": "2020-12-30"
+    "data": "2020-12-30"
+  },
+  {
+    "id": 5,
+    "nome": "Antonio",
+    "sobrenome": "Silva",
+    "telefone": "5457878",
+    "registro": "006",
+    "data": "2020-12-31"
+  },
+  {
+    "id": 6,
+    "nome": "Elizabete",
+    "sobrenome": "Oliveria",
+    "telefone": "478745",
+    "registro": "005",
+    "data": "2020-12-31"
   }
 ]
