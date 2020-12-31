@@ -1,0 +1,26 @@
+[
+  {
+    "id": 1,
+    "nome": "Jose",
+    "sobrenome": "Pereira",
+    "telefone": "2548748",
+    "registro": "001",
+    "dataCadastro": "2020-12-01"
+  },
+  {
+    "id": 2,
+    "nome": "Maria",
+    "sobrenome": "Silva",
+    "telefone": "1542145",
+    "registro": "002",
+    "dataCadastro": "2020-12-15"
+  },
+  {
+    "id": 3,
+    "nome": "Antonio",
+    "sobrenome": "Silva",
+    "telefone": "5457878",
+    "registro": "003",
+    "dataCadastro": "2020-12-30"
+  }
+]
