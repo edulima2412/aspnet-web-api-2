@@ -1,5 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using App.Domain;
+using System;
 using System.Linq;
 using System.Web.Http;
 using System.Web.Http.Cors;
@@ -8,7 +8,7 @@ using WebApp.Models;
 namespace WebApp.Controllers
 {
     [EnableCors("*", "*", "*")]
-    [RoutePrefix("api/alunos")]
+    [RoutePrefix("api/Aluno")]
     public class AlunoController : ApiController
     {
         [HttpGet]
@@ -17,7 +17,7 @@ namespace WebApp.Controllers
         {
             try
             {
-                Aluno aluno = new Aluno();
+                AlunoModel aluno = new AlunoModel();
                 return Ok(aluno.ListarAlunos());
             }
             catch (Exception ex)
@@ -27,13 +27,22 @@ namespace WebApp.Controllers
         }
 
         [HttpGet]
-        [Route("Recuperar/{id}")]
+        [Route("Recuperar/{id?}")]
         public IHttpActionResult Recuperar(int id)
         {
             try
             {
-                Aluno aluno = new Aluno();
-                return Ok(aluno.ListarAlunos().Where(x => x.id == id).FirstOrDefault());
+                AlunoModel aluno = new AlunoModel();
+
+                var resultado = aluno.ListarAlunos(id);
+
+                if(!resultado.Any())
+                {
+                    return NotFound();
+                } else
+                {
+                    return Ok(aluno.ListarAlunos(id));
+                }
             }
             catch (Exception ex)
             {
@@ -47,9 +56,9 @@ namespace WebApp.Controllers
         {
             try
             {
-                Aluno aluno = new Aluno();
+                AlunoModel aluno = new AlunoModel();
 
-                IEnumerable<Aluno> alunos = aluno.ListarAlunos().Where(x => x.data == data);
+                var alunos = aluno.ListarAlunos().Where(x => x.data == data);
 
                 if(!alunos.Any())
                     return NotFound();
@@ -63,14 +72,16 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
-        [Route("Adicionar")]
-        public IHttpActionResult Adicionar([FromBody] Aluno aluno)
+        public IHttpActionResult Adicionar([FromBody] AlunoDTO aluno)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             try
             {
-                Aluno _aluno = new Aluno();
+                AlunoModel _aluno = new AlunoModel();
 
-                _aluno.Salvar(aluno);
+                _aluno.Inserir(aluno);
 
                 return Ok(_aluno.ListarAlunos());
             }
@@ -81,14 +92,25 @@ namespace WebApp.Controllers
         }
 
         [HttpPut]
-        [Route("Atualizar/{id}")]
-        public IHttpActionResult Atualizar(int id, [FromBody] Aluno aluno)
+        [Route("{id}")]
+        public IHttpActionResult Atualizar(int id, [FromBody] AlunoDTO aluno)
         {
             try
             {
-                Aluno _aluno = new Aluno();
-                _aluno.Atualizar(id, aluno);
-                return Ok(aluno);
+                AlunoModel _aluno = new AlunoModel();
+
+                var alunoExiste = _aluno.ListarAlunos().FirstOrDefault(a => a.id == id);
+
+                if(alunoExiste == null)
+                {
+                    return NotFound();
+                } else
+                {
+                    aluno.id = id;
+                    _aluno.Atualizar(aluno);
+
+                    return Ok(_aluno.ListarAlunos(id));
+                }
             }
             catch (Exception ex)
             {
@@ -97,13 +119,23 @@ namespace WebApp.Controllers
         }
 
         [HttpDelete]
-        [Route("Deletar/{id}")]
+        [Route("{id}")]
         public IHttpActionResult Deletar(int id)
         {
             try
             {
-                Aluno _aluno = new Aluno();
-                return Ok(_aluno.Deletar(id));
+                AlunoModel _aluno = new AlunoModel();
+
+                var aluno = _aluno.ListarAlunos().FirstOrDefault(a => a.id == id);
+
+                if(aluno == null)
+                {
+                    return NotFound();
+                } else
+                {
+                    _aluno.Deletar(id);
+                    return Ok("Deletado com sucesso.");
+                }
             }
             catch (Exception ex)
             {

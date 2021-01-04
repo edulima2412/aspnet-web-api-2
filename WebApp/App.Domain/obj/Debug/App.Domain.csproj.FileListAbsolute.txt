@@ -1,0 +1,6 @@
+D:\projeto web-api\WebApp\App.Domain\bin\Debug\App.Domain.dll
+D:\projeto web-api\WebApp\App.Domain\bin\Debug\App.Domain.pdb
+D:\projeto web-api\WebApp\App.Domain\obj\Debug\App.Domain.csprojAssemblyReference.cache
+D:\projeto web-api\WebApp\App.Domain\obj\Debug\App.Domain.csproj.CoreCompileInputs.cache
+D:\projeto web-api\WebApp\App.Domain\obj\Debug\App.Domain.dll
+D:\projeto web-api\WebApp\App.Domain\obj\Debug\App.Domain.pdb

@@ -70,3 +70,12 @@ D:\projeto web-api\WebApp\WebApp\obj\Debug\WebApp.pdb
 D:\projeto web-api\WebApp\WebApp\bin\System.Web.Cors.dll
 D:\projeto web-api\WebApp\WebApp\bin\System.Web.Http.Cors.dll
 D:\projeto web-api\WebApp\WebApp\bin\System.Web.Http.Cors.xml
+D:\projeto web-api\WebApp\WebApp\bin\WebApp.xml
+D:\projeto web-api\WebApp\WebApp\bin\Microsoft.Web.Infrastructure.dll
+D:\projeto web-api\WebApp\WebApp\bin\Swashbuckle.Core.dll
+D:\projeto web-api\WebApp\WebApp\bin\WebActivatorEx.dll
+D:\projeto web-api\WebApp\WebApp\obj\Debug\WebApp.csprojAssemblyReference.cache
+D:\projeto web-api\WebApp\WebApp\bin\App.Domain.dll
+D:\projeto web-api\WebApp\WebApp\bin\App.Repository.dll
+D:\projeto web-api\WebApp\WebApp\bin\App.Domain.pdb
+D:\projeto web-api\WebApp\WebApp\bin\App.Repository.pdb
