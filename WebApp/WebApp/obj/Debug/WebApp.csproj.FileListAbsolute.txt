@@ -79,3 +79,12 @@ D:\projeto web-api\WebApp\WebApp\bin\App.Domain.dll
 D:\projeto web-api\WebApp\WebApp\bin\App.Repository.dll
 D:\projeto web-api\WebApp\WebApp\bin\App.Domain.pdb
 D:\projeto web-api\WebApp\WebApp\bin\App.Repository.pdb
+D:\projeto web-api\WebApp\WebApp\bin\Microsoft.Owin.Cors.dll
+D:\projeto web-api\WebApp\WebApp\bin\Microsoft.Owin.dll
+D:\projeto web-api\WebApp\WebApp\bin\Microsoft.Owin.Host.SystemWeb.dll
+D:\projeto web-api\WebApp\WebApp\bin\Owin.dll
+D:\projeto web-api\WebApp\WebApp\bin\System.Web.Http.Owin.dll
+D:\projeto web-api\WebApp\WebApp\bin\Microsoft.Owin.xml
+D:\projeto web-api\WebApp\WebApp\bin\Microsoft.Owin.Cors.xml
+D:\projeto web-api\WebApp\WebApp\bin\Microsoft.Owin.Host.SystemWeb.xml
+D:\projeto web-api\WebApp\WebApp\bin\System.Web.Http.Owin.xml
