@@ -13,7 +13,7 @@ namespace WebApp.Controllers
     {
         [HttpGet]
         [Route("Recuperar")]
-        [Authorize]
+        [Authorize(Roles = Funcao.Professor)]
         public IHttpActionResult Recuperar()
         {
             try

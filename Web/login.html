@@ -69,6 +69,10 @@
               "token",
               `${resultado.token_type} ${resultado.access_token}`
             );
+            sessionStorage.setItem(
+              "username",
+              `${resultado.Username}`
+            );
             verificar();
           } else {
               alert(resultado.error_description);
