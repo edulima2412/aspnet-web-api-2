@@ -88,3 +88,7 @@ D:\projeto web-api\WebApp\WebApp\bin\Microsoft.Owin.xml
 D:\projeto web-api\WebApp\WebApp\bin\Microsoft.Owin.Cors.xml
 D:\projeto web-api\WebApp\WebApp\bin\Microsoft.Owin.Host.SystemWeb.xml
 D:\projeto web-api\WebApp\WebApp\bin\System.Web.Http.Owin.xml
+D:\projeto web-api\WebApp\WebApp\bin\Microsoft.Owin.Security.dll
+D:\projeto web-api\WebApp\WebApp\bin\Microsoft.Owin.Security.OAuth.dll
+D:\projeto web-api\WebApp\WebApp\bin\Microsoft.Owin.Security.xml
+D:\projeto web-api\WebApp\WebApp\bin\Microsoft.Owin.Security.OAuth.xml

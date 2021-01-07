@@ -49,7 +49,7 @@ namespace WebApp
                 // Permite acesso sem HTTPS
                 AllowInsecureHttp = true,
                 // Endereço para recuperar o token
-                TokenEndpointPath = new PathString("\token"),
+                TokenEndpointPath = new PathString("/token"),
                 // Prazo do token
                 AccessTokenExpireTimeSpan = TimeSpan.FromHours(1),
                 // Usuario de acesso

@@ -38,8 +38,12 @@ function CarregarAlunos() {
     tbody.innerHTML = '';
     var xhr = new XMLHttpRequest();
     xhr.open('GET', `https://localhost:44333/api/Aluno/Recuperar`, true);
+    xhr.setRequestHeader(
+        "Authorization",
+        sessionStorage.getItem('token')
+      );
 
-    xhr.onerror = function name(params) {
+    xhr.onerror = function() {
         console.log('Erro', xhr.readyState);
     }
 

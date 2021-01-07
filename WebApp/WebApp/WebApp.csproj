@@ -126,6 +126,7 @@
   <ItemGroup>
     <Compile Include="App_Start\SwaggerConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="BaseUsuarios.cs" />
     <Compile Include="Controllers\AlunoController.cs" />
     <Compile Include="Models\AlunoModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
